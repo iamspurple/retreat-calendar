@@ -1,0 +1,138 @@
+.mentor {
+  flex-direction: row;
+  align-items: center;
+}
+
+.mentor-image {
+  width: 60%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.mentor-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.mentor-content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mentor-content-buttons {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-points-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-points-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  height: 100%;
+}
+
+.articles-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.articles-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.articles-item-image {
+  width: 100%;
+  aspect-ratio: 1.75;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.articles-item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1280px) {
+  .mentor-image {
+    width: 53%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mentor {
+    gap: 1rem;
+  }
+
+  .mentor-image {
+    width: 45%;
+  }
+
+  .about-points-item {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mentor {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mentor-image {
+    width: 100%;
+  }
+
+  .about-points-list,
+  .articles-list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .articles-item-image {
+    aspect-ratio: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mentor-content {
+    width: 100%;
+  }
+
+  .mentor-content-buttons {
+    flex-direction: column;
+  }
+
+  .mentor-content-buttons button {
+    width: 100%;
+  }
+
+  .articles-item-image {
+    aspect-ratio: 1.5;
+  }
+}

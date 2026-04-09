@@ -1,0 +1,149 @@
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.event-details {
+  display: flex;
+  gap: 2rem;
+}
+
+.event-details-item {
+  display: flex;
+  gap: 0.3rem;
+  align-items: baseline;
+}
+
+.event-details-item dd {
+  font-weight: 600;
+}
+
+.event-image {
+  width: 100%;
+  aspect-ratio: 2;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  object-position: top;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-points-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-points-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  height: 100%;
+}
+
+.faq-content {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.faq-form-wrapper {
+  width: fit-content;
+}
+
+.faq-form-title {
+  text-wrap: nowrap;
+  margin-top: -6px;
+}
+
+.faq-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.faq-form textarea,
+.faq-form input {
+  width: 100%;
+  border: 1px solid #d8deef;
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 1rem;
+}
+
+.faq-form textarea::placeholder,
+.faq-form input::placeholder {
+  font-weight: 200;
+}
+
+.faq-form textarea:focus,
+.faq-form input:focus {
+  outline: none;
+  border-color: #7c7c7c;
+}
+
+.faq-accordion-list {
+  width: 100%;
+}
+
+.faq-accordion {
+  border-top: 1px solid #d8deef;
+  font-weight: 200;
+  color: var(--color-blue);
+  padding: 1rem;
+}
+
+.faq-accordion:last-of-type {
+  border-bottom: 1px solid #d8deef;
+}
+
+.faq-accordion summary {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-accordion summary::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  aspect-ratio: 1;
+  background: url(/assets/icons/plus.svg) center/contain no-repeat;
+  flex-shrink: 0;
+}
+
+.faq-accordion[open] summary::after {
+  background: url(/assets/icons/minus.svg) center/cover no-repeat;
+}
+
+.faq-accordion-content {
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+.faq-accordion-body {
+  padding-top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-accordion-content {
+    transition: none;
+  }
+
+  .faq-accordion summary::after {
+    transition: none;
+  }
+}

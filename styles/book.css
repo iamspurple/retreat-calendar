@@ -1,0 +1,86 @@
+.book-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.book-image-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.book-image {
+  width: 40%;
+  aspect-ratio: 0.9;
+  object-fit: contain;
+}
+
+.book-button {
+  position: relative;
+}
+
+.book-button::before {
+  content: "";
+  display: inline-block;
+  width: 180px;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 0;
+  transform: translate(-60%, -87%);
+  left: 0;
+  background: url(/assets/icons/arrow.svg) center/contain no-repeat;
+}
+
+.book-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .book-image {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .book-image-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .book-image {
+    width: 60%;
+    align-self: flex-start;
+  }
+
+  .book-button {
+    align-self: flex-end;
+  }
+
+  .book-button::before {
+    transform: translate(-60%, -80%);
+    rotate: 30deg;
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .book-image {
+    width: 100%;
+  }
+
+  .book-button {
+    align-self: flex-start;
+  }
+
+  .book-button::before {
+    transform: scaleX(-1);
+    translate: 50% -100%;
+    rotate: -30deg;
+    width: 90px;
+  }
+}

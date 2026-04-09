@@ -30,6 +30,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Okta Neue";
+  font-display: swap;
+  src: url(/assets/fonts/OktaNeue-SemiBold.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -83,8 +91,11 @@ body {
 .section {
   display: flex;
   flex-direction: column;
-  margin-top: 3.75rem;
   gap: 2rem;
+}
+
+.section:not(:first-of-type) {
+  margin-top: 3.75rem;
 }
 
 .items-center {
@@ -109,17 +120,24 @@ body {
   text-align: center;
 }
 
-.title-lg {
+.title-xl {
   font-size: 5.6rem;
   text-transform: uppercase;
   font-weight: 100;
   color: var(--color-text);
 }
 
-.title-md {
+.title-lg {
   font-size: 4rem;
   text-transform: uppercase;
   font-weight: 100;
+  color: var(--color-text);
+}
+
+.title-md {
+  font-size: 3rem;
+  font-weight: 100;
+  text-transform: uppercase;
   color: var(--color-text);
 }
 
@@ -127,6 +145,7 @@ body {
   font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: 200;
+  color: var(--color-blue);
 }
 
 .text-sm {
@@ -158,8 +177,6 @@ body {
   background-color: white;
   color: var(--color-blue);
   border: 1px solid var(--color-blue);
-  margin-top: -0.75rem;
-  width: 166px;
 }
 
 @media (any-hover: hover) {
@@ -218,6 +235,11 @@ body {
   box-shadow: var(--shadow);
 }
 
+.card-item .btn.white {
+  margin-top: -0.75rem;
+  width: 166px;
+}
+
 .card-image {
   width: 100%;
   aspect-ratio: 1;
@@ -232,7 +254,6 @@ body {
 
 .card-title {
   display: inline-block;
-  color: var(--color-blue);
   margin-bottom: 0.5rem;
 }
 
@@ -328,12 +349,16 @@ body {
     font-size: 1rem;
   }
 
-  .title-lg {
+  .title-xl {
     font-size: 4.5rem;
   }
 
-  .title-md {
+  .title-lg {
     font-size: 3rem;
+  }
+
+  .title-md {
+    font-size: 2.25rem;
   }
 
   .card-list {
@@ -366,12 +391,20 @@ body {
     gap: 0.5rem;
   }
 
-  .title-lg {
+  .title-xl {
     font-size: 3.5rem;
   }
 
-  .title-md {
+  .title-lg {
     font-size: 2.2rem;
+  }
+
+  .title-md {
+    font-size: 1.75rem;
+  }
+
+  .title-sm {
+    font-size: 1.4rem;
   }
 }
 
@@ -509,12 +542,16 @@ body {
     margin-top: 2rem;
   }
 
-  .title-lg {
+  .title-xl {
     font-size: 2.5rem;
   }
 
-  .title-md {
+  .title-lg {
     font-size: 1.8rem;
+  }
+
+  .title-md {
+    font-size: 1.6rem;
   }
 
   .title-sm {
