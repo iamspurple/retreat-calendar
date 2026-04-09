@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/mentor-page.css" />
+  </head>
+  <body class="container">
+    <header class="header">
+      <button id="burger" class="burger">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M4 18L20 18"
+              stroke="#6c81c7"
+              stroke-width="2"
+              stroke-linecap="round"
+            ></path>
+            <path
+              d="M4 12L20 12"
+              stroke="#6c81c7"
+              stroke-width="2"
+              stroke-linecap="round"
+            ></path>
+            <path
+              d="M4 6L20 6"
+              stroke="#6c81c7"
+              stroke-width="2"
+              stroke-linecap="round"
+            ></path>
+          </g>
+        </svg>
+        <svg
+          class="close"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <g id="Menu / Close_LG">
+              <path
+                id="Vector"
+                d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+                stroke="#6c81c7"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </g>
+        </svg>
+      </button>
+      <nav class="menu">
+        <ul class="menu-list">
+          <li>
+            <a href="/">Календарь ретритов</a>
+          </li>
+          <li>
+            <a href="/mentors.html">Наставники</a>
+          </li>
+          <li>
+            <a href="/books.html">Книги</a>
+          </li>
+          <li>
+            <a href="/online.html">Онлайн встречи с мастером</a>
+          </li>
+          <li>
+            <a href="/contact-uss.html">Связаться с нами</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="mentor section">
+        <img
+          class="mentor-image"
+          src="/assets/images/mentor.webp"
+          alt="mentor"
+        />
+        <div class="mentor-content">
+          <h1 class="title-md">Имя Фамилия</h1>
+          <p class="card-details">
+            <span>Роль/направление:</span>
+            <span class="dots"></span>
+            <span> Практика/путь </span>
+          </p>
+          <p class="card-details">
+            <span>С чем работает наставик</span>
+            <span class="dots"></span>
+            <span> Название </span>
+          </p>
+          <div class="mentor-content-buttons">
+            <button class="btn">Записаться</button>
+            <button class="btn white">Задать вопрос</button>
+          </div>
+        </div>
+      </section>
+      <section class="about section">
+        <h2 class="about-title title-md">О наставнике</h2>
+        <div class="about-content">
+          <p>
+            С учётом сложившейся международной обстановки, начало повседневной
+            работы по формированию позиции, а также свежий взгляд на привычные
+            вещи — безусловно открывает новые горизонты для своевременного
+            выполнения сверхзадачи. Как принято считать, акционеры крупнейших
+            компаний освещают чрезвычайно интересные особенности картины в
+            целом, однако конкретные выводы, разумеется, объединены в целые
+            кластеры себе подобных. Являясь всего лишь частью общей картины,
+            диаграммы связей, инициированные исключительно синтетически,
+            призваны к ответу!
+          </p>
+          <p>
+            С другой стороны, консультация с широким активом прекрасно подходит
+            для реализации экспериментов, поражающих по своей масштабности и
+            грандиозности. Как принято считать, сделанные на базе
+            интернет-аналитики выводы формируют глобальную экономическую сеть и
+            при этом — рассмотрены исключительно в разрезе маркетинговых и
+            финансовых предпосылок. Внезапно, ключевые особенности структуры
+            проекта будут описаны максимально подробно.
+          </p>
+        </div>
+      </section>
+      <section class="contact-us section items-center">
+        <h2 class="contact-us-title title-md center">Свяжитесь с нами</h2>
+        <form action="" class="contact-us-form">
+          <div class="contact-us-form-row">
+            <label class="visually-hidden" for="name"
+              >Фамилия имя отчество</label
+            >
+            <input
+              autocomplete="family-name"
+              id="name"
+              type="text"
+              placeholder="ФИО"
+            />
+            <label class="visually-hidden" for="phone">номер телефона</label>
+            <input
+              autocomplete="tel"
+              type="tel"
+              id="phone"
+              placeholder="Номер телефона"
+            />
+            <label class="visually-hidden" for="email">email</label>
+            <input
+              autocomplete="email"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="E-mail"
+            />
+          </div>
+          <label class="visually-hidden" for="comment"></label>
+          <textarea
+            rows="3"
+            name="comment"
+            id="comment"
+            placeholder="Комментарий"
+          ></textarea>
+          <button type="submit" class="btn">Отправить</button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <nav class="menu">
+        <ul class="menu-list">
+          <li>
+            <a href="/">Календарь ретритов</a>
+          </li>
+          <li>
+            <a href="/mentors.html">Наставники</a>
+          </li>
+          <li>
+            <a href="/books.html">Книги</a>
+          </li>
+          <li>
+            <a href="/online.html">Онлайн встречи с мастером</a>
+          </li>
+          <li>
+            <a href="/contact-uss.html">Связаться с нами</a>
+          </li>
+        </ul>
+      </nav>
+      <span class="center">Календарь ретритов</span>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

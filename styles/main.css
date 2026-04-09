@@ -1,0 +1,527 @@
+@font-face {
+  font-family: "Okta Neue";
+  font-display: swap;
+  src: url(/assets/fonts/OktaNeue-ExtraLight.woff2) format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Okta Neue";
+  font-display: swap;
+  src: url(/assets/fonts/OktaNeue-Light.woff2) format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Okta Neue";
+  font-display: swap;
+  src: url(/assets/fonts/OktaNeue-Normal.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Okta Neue";
+  font-display: swap;
+  src: url(/assets/fonts/OktaNeue-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  font-family: "Okta Neue";
+  font-size: 16px;
+  --color-blue: #6c81c7;
+  --color-text: #5a617b;
+  --color-text-secondary: #7c7c7c;
+  --shadow: 0px 0px 87.1px 0px #dee5f2;
+  --transition: 0.3s ease;
+  color: var(--color-text-secondary);
+  font-weight: 300;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+body {
+  padding-block: 3rem;
+  background-color: white;
+  background: url(/assets/images/abstraction.svg) top/contain no-repeat;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.75rem;
+  gap: 2rem;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.main {
+  padding-block: 3rem;
+}
+
+.accent {
+  color: var(--color-blue);
+  font-weight: 200;
+}
+
+.center {
+  text-align: center;
+}
+
+.title-lg {
+  font-size: 5.6rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: var(--color-text);
+}
+
+.title-md {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: var(--color-text);
+}
+
+.title-sm {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.text-sm {
+  font-size: 0.88rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.btn {
+  padding: 0.88rem 1.88rem;
+  padding-top: 0.8rem;
+  background-color: var(--color-blue);
+  color: white;
+  border-radius: 100px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-transform: uppercase;
+  width: fit-content;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn.white {
+  background-color: white;
+  color: var(--color-blue);
+  border: 1px solid var(--color-blue);
+  margin-top: -0.75rem;
+  width: 166px;
+}
+
+@media (any-hover: hover) {
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  .btn.white:hover {
+    opacity: 1;
+    background-color: #d8deef85;
+  }
+}
+
+.burger {
+  width: 50px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+
+.burger .close {
+  display: none;
+}
+
+.menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-blue);
+}
+
+.menu-list a {
+  transition: var(--transition);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-info {
+  width: 100%;
+}
+
+.card-title {
+  display: inline-block;
+  color: var(--color-blue);
+  margin-bottom: 0.5rem;
+}
+
+.card-details {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.card-details > span {
+  text-wrap: nowrap;
+}
+
+.card-details .dots {
+  width: 100%;
+  border-bottom: 1px dashed #c7c7c7;
+}
+
+.contact-us {
+  padding: 5.7rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.contact-us-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-us-form-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-us-form textarea,
+.contact-us-form input {
+  width: 100%;
+  border: 1px solid #d8deef;
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 1rem;
+}
+
+.contact-us-form textarea::placeholder,
+.contact-us-form input::placeholder {
+  font-weight: 200;
+}
+
+.contact-us-form textarea:focus,
+.contact-us-form input:focus {
+  outline: none;
+  border-color: #7c7c7c;
+}
+
+@media (any-hover: hover) {
+  .menu-list a:hover {
+    text-decoration-color: var(--color-blue);
+  }
+}
+
+.footer {
+  font-size: 0.75rem;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media screen and (max-width: 1470px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body,
+  .main {
+    padding-block: 2.3rem;
+  }
+
+  .menu-list {
+    font-size: 1rem;
+  }
+
+  .title-lg {
+    font-size: 4.5rem;
+  }
+
+  .title-md {
+    font-size: 3rem;
+  }
+
+  .card-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-image {
+    aspect-ratio: 1.3;
+  }
+
+  .contact-us {
+    padding: 4rem;
+  }
+
+  .contact-us-form {
+    gap: 0.5rem;
+  }
+
+  .contact-us-form .btn {
+    margin-top: 0.5rem;
+  }
+
+  .contact-us-form-row {
+    gap: 0.5rem;
+  }
+
+  .title-lg {
+    font-size: 3.5rem;
+  }
+
+  .title-md {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-block: 1.8rem;
+  }
+
+  .main {
+    margin-top: 70px;
+  }
+
+  .container {
+    padding-inline: 1.5rem;
+  }
+
+  .header {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    z-index: 200;
+  }
+
+  .header::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/assets/images/abstraction.svg) top/cover no-repeat;
+  }
+
+  .header .menu {
+    padding-left: 1.5rem;
+    position: fixed;
+    top: 87px;
+    left: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: var(--transition);
+    background-color: white;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .header .menu-list {
+    flex-direction: column;
+    font-size: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .header .menu-list li {
+    width: 100%;
+  }
+
+  .header .menu-list li:not(:last-of-type) {
+    border-bottom: 1px solid #d8deef;
+  }
+  .header .menu-list a {
+    display: inline-block;
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .header:has(.burger.active) .menu {
+    transform: none;
+    opacity: 1;
+  }
+
+  .burger {
+    display: inline-block;
+  }
+
+  .burger.active svg {
+    display: none;
+  }
+
+  .burger.active .close {
+    display: inline-block;
+    transform: scale(0.8);
+  }
+
+  .card-list {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card-item {
+    max-width: 560px;
+    padding-inline: 1rem;
+  }
+
+  .card-image {
+    aspect-ratio: 1.5;
+  }
+
+  .contact-us {
+    padding: 2rem;
+  }
+
+  .contact-us-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer .menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-inline: 0.75rem;
+  }
+
+  .header {
+    padding: 0.75rem;
+  }
+
+  .header .menu {
+    padding: 0;
+    max-width: 100%;
+    top: 78px;
+  }
+
+  .header .menu-list {
+    font-size: 1.5rem;
+  }
+
+  .main {
+    margin-top: 2rem;
+  }
+
+  .title-lg {
+    font-size: 2.5rem;
+  }
+
+  .title-md {
+    font-size: 1.8rem;
+  }
+
+  .title-sm {
+    font-size: 1.2rem;
+  }
+
+  .contact-us {
+    padding: 1rem;
+  }
+}
