@@ -84,8 +84,18 @@ img {
 
 body {
   padding-block: 3rem;
-  background-color: white;
-  background: url(/assets/images/abstraction.svg) top/contain no-repeat;
+}
+
+body::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url(/assets/images/abstraction.svg) top/cover no-repeat;
 }
 
 .section {
@@ -103,6 +113,11 @@ body {
 }
 
 .container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -334,8 +349,9 @@ body {
 }
 
 @media screen and (max-width: 1470px) {
-  .container {
-    padding-inline: 2rem;
+  .container,
+  .header {
+    margin-inline: 2rem;
   }
 }
 
@@ -413,12 +429,16 @@ body {
     padding-block: 1.8rem;
   }
 
+  body::before {
+    background-size: contain;
+  }
+
   .main {
     margin-top: 70px;
   }
 
   .container {
-    padding-inline: 1.5rem;
+    margin-inline: 1.5rem;
   }
 
   .header {
@@ -429,6 +449,7 @@ body {
     top: 0;
     left: 0;
     z-index: 200;
+    margin: 0;
   }
 
   .header::after {
@@ -521,7 +542,7 @@ body {
 
 @media screen and (max-width: 480px) {
   .container {
-    padding-inline: 0.75rem;
+    margin-inline: 0.75rem;
   }
 
   .header {
