@@ -28,6 +28,22 @@
   object-position: top;
 }
 
+.event-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.event-link::after {
+  margin-top: 2px;
+  content: "";
+  display: inline-block;
+  width: 28px;
+  aspect-ratio: 1;
+  background: url(/assets/icons/video.svg) center/contain no-repeat;
+}
+
 .about-content {
   display: flex;
   flex-direction: column;
@@ -41,6 +57,7 @@
 }
 
 .about-points-item {
+  background-color: white;
   display: flex;
   flex-direction: column;
   gap: 1rem;

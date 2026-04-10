@@ -91,7 +91,7 @@ body::before {
   display: inline-block;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
@@ -239,6 +239,7 @@ body::before {
 }
 
 .card-item {
+  background-color: white;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -290,6 +291,7 @@ body::before {
 }
 
 .contact-us {
+  background-color: white;
   padding: 5.7rem;
   box-shadow: var(--shadow);
   display: flex;
