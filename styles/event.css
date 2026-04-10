@@ -80,6 +80,7 @@
 .faq-form-title {
   text-wrap: nowrap;
   margin-top: -6px;
+  margin-bottom: 1rem;
 }
 
 .faq-form {
@@ -162,5 +163,48 @@
 
   .faq-accordion summary::after {
     transition: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-points-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-points-item {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .event-header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .event-details {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .about-points-list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .faq-content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .event-image {
+    aspect-ratio: 1.5;
+  }
+
+  .faq-form-wrapper {
+    width: 100%;
   }
 }

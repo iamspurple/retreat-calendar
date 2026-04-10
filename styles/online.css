@@ -67,3 +67,7 @@ body::after {
   height: 9px;
   background: url(/assets/icons/arrow-straight.svg) center/contain no-repeat;
 }
+
+.format button {
+  margin-top: 1rem;
+}
