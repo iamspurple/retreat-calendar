@@ -546,6 +546,11 @@ body::before {
 }
 
 @media screen and (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+    scroll-padding-top: calc(70px + env(safe-area-inset-top, 0px));
+  }
+
   body {
     padding-block: 1.8rem;
   }
@@ -590,9 +595,11 @@ body::before {
   }
 
   .header .menu {
+    height: 100%;
     padding-left: 1.5rem;
+    padding-top: 87px;
     position: fixed;
-    top: 87px;
+    top: 0;
     left: 0;
     transform: translateX(-100%);
     opacity: 0;
@@ -627,6 +634,8 @@ body::before {
 
   .burger {
     display: inline-block;
+    position: relative;
+    z-index: 200;
   }
 
   .burger.active svg {
@@ -676,8 +685,8 @@ body::before {
 
   .header .menu {
     padding: 0;
-    max-width: 100%;
-    top: 78px;
+    width: 100%;
+    padding-top: 78px;
   }
 
   .header .menu-list {

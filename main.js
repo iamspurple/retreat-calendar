@@ -86,6 +86,53 @@ function initFaqAccordions() {
   });
 }
 
+function getFixedHeaderAnchorOffsetPx() {
+  const header = document.querySelector(".header");
+  if (!header) return 0;
+  const { position } = getComputedStyle(header);
+  if (position !== "fixed" && position !== "sticky") return 0;
+  return Math.round(header.getBoundingClientRect().height) + 10;
+}
+
+function alignDocumentToLocationHash() {
+  const { hash } = window.location;
+  if (!hash || hash === "#") return;
+  let id;
+  try {
+    id = decodeURIComponent(hash.slice(1));
+  } catch {
+    id = hash.slice(1);
+  }
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const burger = document.getElementById("burger");
+  if (burger) burger.classList.remove("active");
+
+  const offset = getFixedHeaderAnchorOffsetPx();
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+}
+
+function scheduleAlignDocumentToHash() {
+  alignDocumentToLocationHash();
+  requestAnimationFrame(() => {
+    alignDocumentToLocationHash();
+    requestAnimationFrame(alignDocumentToLocationHash);
+  });
+  window.setTimeout(alignDocumentToLocationHash, 150);
+}
+
+function initHashScrollAlignment() {
+  scheduleAlignDocumentToHash();
+  window.addEventListener("hashchange", scheduleAlignDocumentToHash);
+  window.addEventListener("load", scheduleAlignDocumentToHash);
+  window.addEventListener("pageshow", (ev) => {
+    if (ev.persisted) scheduleAlignDocumentToHash();
+  });
+}
+
 function initModalControls() {
   const overlay = document.getElementById("overlay");
   const modal = document.getElementById("modal");
@@ -121,9 +168,11 @@ function initModalControls() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const burgerBtn = document.getElementById("burger");
-  burgerBtn.addEventListener("click", () => {
-    burgerBtn.classList.toggle("active");
-  });
+  if (burgerBtn) {
+    burgerBtn.addEventListener("click", () => {
+      burgerBtn.classList.toggle("active");
+    });
+  }
 
   const forms = document.querySelectorAll("form");
 
@@ -162,4 +211,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initFaqAccordions();
   initModalControls();
+  initHashScrollAlignment();
 });
