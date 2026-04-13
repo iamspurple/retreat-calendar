@@ -78,7 +78,7 @@
             <a href="/online.html">Онлайн встречи с мастером</a>
           </li>
           <li>
-            <a href="/contact-uss.html">Связаться с нами</a>
+            <a href="/index.html#contact-us">Связаться с нами</a>
           </li>
         </ul>
       </nav>
@@ -103,7 +103,7 @@
                   <span> Практика/путь </span>
                 </p>
               </div>
-              <button class="btn">Записаться</button>
+              <button class="btn open-modal">Записаться</button>
               <a href="/mentor-page.html" class="btn white">профиль</a>
             </div>
           </li>
@@ -123,7 +123,7 @@
                   <span> Практика/путь </span>
                 </p>
               </div>
-              <button class="btn">Записаться</button>
+              <button class="btn open-modal">Записаться</button>
               <a href="/mentor-page.html" class="btn white">профиль</a>
             </div>
           </li>
@@ -143,7 +143,7 @@
                   <span> Практика/путь </span>
                 </p>
               </div>
-              <button class="btn">Записаться</button>
+              <button class="btn open-modal">Записаться</button>
               <a href="/mentor-page.html" class="btn white">профиль</a>
             </div>
           </li>
@@ -163,7 +163,7 @@
                   <span> Практика/путь </span>
                 </p>
               </div>
-              <button class="btn">Записаться</button>
+              <button class="btn open-modal">Записаться</button>
               <a href="/mentor-page.html" class="btn white">профиль</a>
             </div>
           </li>
@@ -206,7 +206,13 @@
             id="comment"
             placeholder="Комментарий"
           ></textarea>
-          <button type="submit" class="btn">Отправить</button>
+          <button
+            type="submit"
+            class="submit btn"
+            data-success-message="Успешно отправлено ✓"
+          >
+            Отправить
+          </button>
         </form>
       </section>
     </main>
@@ -226,12 +232,66 @@
             <a href="/online.html">Онлайн встречи с мастером</a>
           </li>
           <li>
-            <a href="/contact-uss.html">Связаться с нами</a>
+            <a href="/index.html#contact-us">Связаться с нами</a>
           </li>
         </ul>
       </nav>
       <span class="center">Календарь ретритов</span>
     </footer>
+    <div id="overlay" class="overlay"></div>
+    <div id="modal" class="modal">
+      <div class="modal-wrapper container">
+        <section id="contact-us" class="contact-us section items-center">
+          <button class="contact-us-close-btn close-modal" title="Закрыть">
+            <img src="/assets/icons/plus.svg" alt="Закрыть" />
+          </button>
+          <h2 class="contact-us-title title-lg center">Свяжитесь с нами</h2>
+
+          <form action="" class="contact-us-form">
+            <div class="contact-us-form-row">
+              <label class="visually-hidden" for="name"
+                >Фамилия имя отчество</label
+              >
+              <input
+                autocomplete="family-name"
+                id="name"
+                type="text"
+                placeholder="ФИО"
+              />
+              <label class="visually-hidden" for="phone">номер телефона</label>
+              <input
+                autocomplete="tel"
+                type="tel"
+                id="phone"
+                placeholder="Номер телефона"
+              />
+              <label class="visually-hidden" for="email">email</label>
+              <input
+                autocomplete="email"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="E-mail"
+              />
+            </div>
+            <label class="visually-hidden" for="comment"></label>
+            <textarea
+              rows="3"
+              name="comment"
+              id="comment"
+              placeholder="Комментарий"
+            ></textarea>
+            <button
+              type="submit"
+              class="submit btn"
+              data-success-message="Успешно отправлено ✓"
+            >
+              Отправить
+            </button>
+          </form>
+        </section>
+      </div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

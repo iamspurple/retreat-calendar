@@ -67,6 +67,8 @@ img {
   --transition: 0.3s ease;
   color: var(--color-text-secondary);
   font-weight: 300;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }
 
 .visually-hidden {
@@ -96,6 +98,17 @@ body::before {
   left: 0;
   z-index: -1;
   background: url(/assets/images/abstraction.svg) top/cover no-repeat;
+}
+
+.not-found {
+  width: 50%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.not-found h1 {
+  font-size: 26vw;
+  line-height: 24vw;
 }
 
 .section {
@@ -350,6 +363,112 @@ body::before {
   gap: 3rem;
 }
 
+.overlay {
+  background-color: #5a617b3b;
+  background-color: #7c7c7c8d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
+
+.overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-wrapper {
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  transform: translateY(0.75rem) scale(0.98);
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modal.is-open .modal-wrapper {
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .modal,
+  .modal-wrapper {
+    transition-duration: 0.01ms !important;
+  }
+
+  .modal-wrapper {
+    transform: none;
+  }
+
+  .modal.is-open .modal-wrapper {
+    transform: none;
+  }
+}
+
+.modal-wrapper .contact-us {
+  box-shadow: none;
+  padding: 3.5rem 2rem 2rem 2rem;
+}
+
+.modal-wrapper .contact-us-close-btn {
+  position: absolute;
+  width: 24px;
+  aspect-ratio: 1;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-wrapper .contact-us-close-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: rotate(45deg);
+}
+
+.modal-wrapper .contact-us-title {
+  font-size: 1.9rem;
+}
+
+.modal-wrapper .contact-us-form-row {
+  grid-template-columns: 1fr;
+}
+
 @media screen and (max-width: 1470px) {
   .container,
   .header {
@@ -433,6 +552,10 @@ body::before {
 
   body::before {
     background-size: contain;
+  }
+
+  .not-found {
+    width: 100%;
   }
 
   .main {
@@ -583,5 +706,14 @@ body::before {
 
   .contact-us {
     padding: 1rem;
+  }
+
+  .modal-wrapper .contact-us {
+    box-shadow: none;
+    padding: 2.5rem 1rem 1rem 1rem;
+  }
+
+  .modal-wrapper .contact-us-title {
+    font-size: 1.5rem;
   }
 }

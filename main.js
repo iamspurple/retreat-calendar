@@ -86,11 +86,80 @@ function initFaqAccordions() {
   });
 }
 
+function initModalControls() {
+  const overlay = document.getElementById("overlay");
+  const modal = document.getElementById("modal");
+  if (!overlay || !modal) return;
+
+  const setOpen = (open) => {
+    overlay.classList.toggle("is-open", open);
+    modal.classList.toggle("is-open", open);
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+
+  setOpen(false);
+
+  document.querySelectorAll(".open-modal").forEach((btn) => {
+    btn.addEventListener("click", () => setOpen(true));
+  });
+
+  document.querySelectorAll(".close-modal").forEach((btn) => {
+    btn.addEventListener("click", () => setOpen(false));
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) setOpen(false);
+  });
+
+  const onKeydown = (e) => {
+    if (e.key !== "Escape") return;
+    if (!modal.classList.contains("is-open")) return;
+    setOpen(false);
+  };
+  document.addEventListener("keydown", onKeydown);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const burgerBtn = document.getElementById("burger");
   burgerBtn.addEventListener("click", () => {
     burgerBtn.classList.toggle("active");
   });
 
+  const forms = document.querySelectorAll("form");
+
+  forms.forEach((form) => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const button = e.target.querySelector(".submit");
+      const originalText = button.textContent;
+      const successMessage = button.dataset.successMessage;
+
+      // Показываем состояние загрузки
+
+      button.disabled = true;
+
+      try {
+        await console.log("sent!");
+
+        // Меняем на успешное сообщение
+        button.textContent = successMessage;
+
+        // Возвращаем исходное состояние
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 2000);
+      } catch (error) {
+        button.textContent = "Ошибка!";
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 2000);
+      }
+    });
+  });
+
   initFaqAccordions();
+  initModalControls();
 });
