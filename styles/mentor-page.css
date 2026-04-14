@@ -30,6 +30,29 @@
   width: 100%;
 }
 
+.mentor-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.mentor-link::after {
+  margin-top: 2px;
+  content: "";
+  display: inline-block;
+  width: 28px;
+  aspect-ratio: 1;
+  background: url(/assets/icons/video.svg) center/contain no-repeat;
+}
+
+.about-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .about-content {
   display: flex;
   flex-direction: column;
@@ -107,6 +130,11 @@
 
   .mentor-image {
     width: 100%;
+  }
+
+  .about-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .about-points-list,
