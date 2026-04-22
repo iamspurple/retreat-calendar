@@ -2,7 +2,7 @@
   max-width: 50%;
 }
 
-.master::after {
+.master::before {
   content: "";
   display: inline-block;
   width: 50%;
@@ -18,10 +18,14 @@
 @media screen and (max-width: 768px) {
   .master {
     max-width: 100%;
+    margin-top: 15%;
   }
 
-  .master::after {
+  .master::before {
+    position: absolute;
     width: 100%;
-    opacity: 0.5;
+    height: auto;
+    aspect-ratio: 2;
+    top: 5%;
   }
 }
